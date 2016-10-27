@@ -1,5 +1,5 @@
 {
-  "name": "manifesto.js",
+  "name": "manifesto",
   "version": "1.0.0",
   "description": "IIIF Presentation API utility library for client and server",
   "main": "dist/server/manifesto.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/viewdir/manifesto.git"
+    "url": "git+https://github.com/blumenbach/manifesto.git"
   },
   "keywords": [
     "IIIF"

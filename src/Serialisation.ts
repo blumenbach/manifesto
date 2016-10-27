@@ -16,6 +16,8 @@ module Manifesto {
                 }
             }
 
+            if (json['@graph']) { json = json['@graph'][0]; }
+
             switch (json['@type']) {
                 case 'sc:Collection':
                     resource = this.parseCollection(json, options);

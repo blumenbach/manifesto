@@ -1,4 +1,4 @@
-// manifesto.js v1.0.0 https://github.com/viewdir/manifesto
+// manifesto v1.0.0 https://github.com/viewdir/manifesto
 declare module exjs {
     var version: string;
 }
@@ -1136,6 +1136,24 @@ declare module Manifesto {
     }
 }
 
+declare module Manifesto {
+    interface IManifestResource extends IJSONLDResource {
+        externalResource: Manifesto.IExternalResource;
+        options: IManifestoOptions;
+        getLabel(): TranslationCollection;
+        getMetadata(): MetadataItem[];
+        getRendering(format: RenderingFormat | string): IRendering;
+        getRenderings(): IRendering[];
+        getService(profile: ServiceProfile | string): IService;
+        getServices(): IService[];
+        isAnnotation(): boolean;
+        isCanvas(): boolean;
+        isManifest(): boolean;
+        isRange(): boolean;
+        isSequence(): boolean;
+    }
+}
+
 interface IManifesto {
     AnnotationMotivation: Manifesto.AnnotationMotivation;
     create: (manifest: string, options?: Manifesto.IManifestoOptions) => Manifesto.IIIIFResource;
@@ -1173,24 +1191,6 @@ declare module Manifesto {
         resource: IIIIFResource;
         navDate?: Date;
         pessimisticAccessControl: boolean;
-    }
-}
-
-declare module Manifesto {
-    interface IManifestResource extends IJSONLDResource {
-        externalResource: Manifesto.IExternalResource;
-        options: IManifestoOptions;
-        getLabel(): TranslationCollection;
-        getMetadata(): MetadataItem[];
-        getRendering(format: RenderingFormat | string): IRendering;
-        getRenderings(): IRendering[];
-        getService(profile: ServiceProfile | string): IService;
-        getServices(): IService[];
-        isAnnotation(): boolean;
-        isCanvas(): boolean;
-        isManifest(): boolean;
-        isRange(): boolean;
-        isSequence(): boolean;
     }
 }
 
